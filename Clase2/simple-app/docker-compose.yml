@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: "flask-app-alpine"
+    container_name: "flask-app"
+    restart: always
+    ports:
+      - "5000:5000"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: "front_clase2"
+    container_name: "front"
+    ports:
+      - "3000:3000"

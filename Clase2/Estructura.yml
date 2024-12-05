@@ -1,0 +1,13 @@
+# Este es un ejemplo
+nombre: Allen Roman
+edad: 21
+habilidades:
+  - Programacion
+  - Enseñanza
+  - Investigacion
+direccion:
+  calle: 1234
+  ciudad: Guadalajara
+  estado: Jalisco
+  pais: Mexico
+activo: true
