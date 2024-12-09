@@ -50,7 +50,7 @@ function Form() {
             .then((response) => {
                 console.log(response);
                 console.log(response.mensaje);
-                if(response.mensaje == "Registro Exitoso"){
+                if(response.mensaje == "Disco registrado exitosamente"){
                     console.log("Registro exitoso");
                     //Cargar tabla
                     //Vaciar campos

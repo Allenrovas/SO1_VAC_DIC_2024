@@ -11,7 +11,7 @@ CORS(app)
 load_dotenv()
 
 # Database configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASS')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -66,4 +66,4 @@ def registro():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        app.run(debug=True, port=8000)
+        app.run(debug=True, host='0.0.0.0', port=8000)  
