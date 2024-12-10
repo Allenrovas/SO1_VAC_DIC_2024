@@ -75,35 +75,40 @@ static int calcularPorcentajeCPU(void){
     return porcentaje;
 }
 
-static int escribir_archivo(struct seq_file * archivo, void *v) {
+static int escribir_archivo(struct seq_file *archivo, void *v) {
     int porcentaje = calcularPorcentajeCPU();
-    // Obtenemos la informacion de la CPU
-    if (porcentaje == -1){
-        seq_printf(archivo, "Error al leer el archivo\n");
+    if (porcentaje == -1) {
+        seq_printf(archivo, "{\"error\": \"Error al leer el archivo\"}\n");
     } else {
         seq_printf(archivo, "{\n");
-        seq_printf(archivo, "\"percentage_used\": %d\n", porcentaje);
-        seq_printf(archivo, "tasks: [\n");
+        seq_printf(archivo, "  \"percentage_used\": %d,\n", porcentaje);
+        seq_printf(archivo, "  \"tasks\": [\n");
+
         struct task_struct *task;
-        int ram, separador = 0;
-        for_each_process(task){
-            if (separador){
+        int ram;
+        bool first_task = true;
+
+        for_each_process(task) {
+            if (!first_task) {
                 seq_printf(archivo, ",\n");
             }
-            seq_printf(archivo, "{\n");
-            seq_printf(archivo, "\"pid\": %d,\n", task->pid);
-            seq_printf(archivo, "\"name\": \"%s\",\n", task->comm);
-            seq_printf(archivo, "\"state\": %d,\n", task->__state);
-            seq_printf(archivo, "\"user\": %d,\n", task->cred->uid.val);
-            if (task->mm){
-                ram = (get_mm_rss(task->mm)<<PAGE_SHIFT) / (1024 * 1024);
-                seq_printf(archivo, "\"ram\": %d\n", ram);
+            seq_printf(archivo, "    {\n");
+            seq_printf(archivo, "      \"pid\": %d,\n", task->pid);
+            seq_printf(archivo, "      \"name\": \"%s\",\n", task->comm);
+            seq_printf(archivo, "      \"state\": %d,\n", task->__state);
+            seq_printf(archivo, "      \"user\": %d,\n", task->cred->uid.val);
+            if (task->mm) {
+                ram = (get_mm_rss(task->mm) << PAGE_SHIFT) / (1024 * 1024);
+                seq_printf(archivo, "      \"ram\": %d,\n", ram);
+            } else {
+                seq_printf(archivo, "      \"ram\": null,\n");
             }
-            seq_printf(archivo, "\"father\": %d\n", task->parent->pid);
-            seq_printf(archivo, "}\n");
-            separador = 1;
+            seq_printf(archivo, "      \"father\": %d\n", task->parent->pid);
+            seq_printf(archivo, "    }");
+            first_task = false;
         }
-        seq_printf(archivo, "]\n");
+
+        seq_printf(archivo, "\n  ]\n");
         seq_printf(archivo, "}\n");
     }
     return 0;
