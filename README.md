@@ -6,6 +6,8 @@ Repositorio con ejemplos para el laboratorio de **Sistemas Operativos 1** de **V
 ## 📚 **Clases**  
 - [Clase 1](https://drive.google.com/file/d/1R2gD3ySZnGRX5hJF4MMRkL5oCvlTs_5N/view?usp=sharing)  
 - [Clase 2](https://drive.google.com/file/d/1EUM9cc12f1N9-VpfqiLq5LuJTrevsgSC/view?usp=sharing)  
-- [Clase 3](https://drive.google.com/file/d/1YrPac2tE3mb-YjPV9LcYCFl8KDfJeFuv/view?usp=sharing)  
+- [Clase 3](https://drive.google.com/file/d/1YrPac2tE3mb-YjPV9LcYCFl8KDfJeFuv/view?usp=sharing)
+- [Clase 4](https://drive.google.com/file/d/1rLtDMzdX-Xm7aNUuJv9cU7W2BII8crk7/view?usp=sharing)
+- [Clase 5](https://drive.google.com/file/d/103AHtjpvFJMDrSbZTxGhrLQUIddEGFM6/view?usp=sharing)
 
 ---
