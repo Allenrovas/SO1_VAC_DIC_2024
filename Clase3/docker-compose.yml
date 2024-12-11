@@ -9,10 +9,7 @@ services:
     ports:
       - "3306:3306"
   backend:
-    build:
-      context: ./Backend
-      dockerfile: Dockerfile
-    image: "app_python"
+    image: "allenrovas/app_python"
     container_name: "Backend_Py"
     environment:
       DB_HOST: MYSQL_Base
@@ -24,10 +21,7 @@ services:
       - "8000:8000"
     restart: always
   frontend:
-    build:
-      context: ./Frontend
-      dockerfile: Dockerfile
-    image: "app_react"
+    image: "allenrovas/app_react"
     container_name: "frontend_react"
     ports:
       - "5173:5173"
