@@ -11,4 +11,6 @@ Repositorio con ejemplos para el laboratorio de **Sistemas Operativos 1** de **V
 - [Clase 5](https://drive.google.com/file/d/103AHtjpvFJMDrSbZTxGhrLQUIddEGFM6/view?usp=sharing)
 - [Clase 6](https://drive.google.com/file/d/12QZGyhqcdnNILsgl3ZrgCuQLR_3Zj_Bx/view?usp=sharing)
 - [Clase 7](https://drive.google.com/file/d/1yfgsKR28ZJ90XzZul78Pmp7sp1doGo-s/view?usp=sharing)
+- [Clase 8](https://drive.google.com/file/d/1pDFomomAWmGbpMozU2j_259PsNdpDFmC/view?usp=sharing)
+- [Clase 9](https://drive.google.com/file/d/1RHsU4Cp3CyBkV8wRcKl2CL0Ob2JQjvv7/view?usp=sharing)
 ---
