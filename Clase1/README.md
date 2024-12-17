@@ -97,7 +97,7 @@ sudo docker ps
 sudo docker system prune -a
 ```
 
-## Eliminar un contenedir especifico.
+## Eliminar un contenedor especifico.
 
 ```sh
 sudo docker rm <<id container>>
