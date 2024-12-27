@@ -1,34 +1,28 @@
 import json
 import random
 
-def generar_carnet():
-    anio = random.choice(range(2020, 2024))
-    numeros_aleratorios = random.randint(00000, 99999)
-    carnet = f"{anio}{numeros_aleratorios}"
-    return int(carnet)
-
-def generar_nombre():
-    nombres = ["Juan", "Pedro", "Maria", "Jose", "Carlos", "Ana", "Luis", "Luisa", "Sofia", "Andrea"]
-    return random.choice(nombres)
+def generar_facultad():
+    facultades = ["Ingenieria", "Medicina", "Derecho", "Arquitectura", "Economia", "Veterinaria", "Odontologia"]
+    return random.choice(facultades)
 
 def generar_curso():
-    cursos = ["SO1", "LFP", "BD1", "SA", "AYD1"]
+    cursos = ["SO1", "LFP", "BD1", "SA", "AYD1", "SO2", "BD2", "AYD2", "SA", "IA1"]
     return random.choice(cursos)
 
-def generar_nota():
-    return random.choice([50, 60, 70, 80, 90, 100])
+def generar_carrera():
+    carreras = ["Sistemas", "Industrial", "Civil", "Mecanica", "Electronica", "Quimica", "Biomedica"]
+    return random.choice(carreras)
 
-def generar_semestre():
-    return random.choice(['1S', '2S'])
+def generar_region():
+    regiones = ["METROPOLITANA", "NORTE", "NORORIENTAL", "SURORIENTAL", "CENTRAL", "SUROCCIDENTAL", "NOROCCIDENTAL", "PETEN"]
+    return random.choice(regiones)
 
 def generar_json():
     data = {
-        "carnet": generar_carnet(),
-        "nombre": generar_nombre(),
         "curso": generar_curso(),
-        "nota": generar_nota(),
-        "semestre": generar_semestre(),
-        "year": 2024
+        "carrera": generar_carrera(),
+        "facultad": generar_facultad(),
+        "region": generar_region()
     }
     return data
 
