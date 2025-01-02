@@ -107,7 +107,13 @@ Para iniciar sesión en Harbor, se debe ingresar con el usuario `admin` y la con
 
 Crear un proyecto en Harbor es muy sencillo. Solo se debe hacer clic en el botón `New Project` y llenar los campos solicitados, como el nombre del proyecto y la descripción.
 
-## Paso 8. Editar sitios de confianza de Docker
+Y hacer login con el usuario `admin` y la contraseña `Harbor12345` desde docker:
+
+```bash
+docker login registry.home-k8s.lab
+```
+
+## Paso 8. Editar sitios de confianza de Docker 
 
 Para editar los sitios de confianza de Docker, se debe ejecutar el siguiente comando:
 
