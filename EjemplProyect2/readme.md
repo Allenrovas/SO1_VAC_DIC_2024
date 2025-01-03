@@ -6,7 +6,7 @@
 
 Para crear el cluster de Kubernetes en Google Cloud Platform, se debe seguir los siguientes pasos en la consola de Google Cloud Platform, dados en el meet de la clase 14:
 
-- [Clase 14](https://drive.google.com/file/d/1DCSBAhEHkUIISD3rvElNSE-1ZTLCN_cR/view?usp=sharing)
+- [Clase 15](https://drive.google.com/file/d/11S-cSST-wfk-iA9oqoxyZlWEH2TQyLL9/view?usp=drivesdk)
 
 ## 2. Configurar el entorno de desarrollo con Harbor
 
