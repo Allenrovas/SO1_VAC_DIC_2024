@@ -41,17 +41,28 @@ Este nos creará una carpeta con el nombre `harbor` en la que se encuentra el ch
 
 El archivo `values.yaml` contiene la configuración por defecto de Harbor. Se puede modificar según las necesidades del proyecto. (En este caso, pueden utilizar el archivo que se encuentra en el repositorio)
 
-## Paso 2. Crear un namespace para Harbor
+## Paso 2. Crear un namespace para nginx-ingress y desplegarlo
 
-Para crear un namespace para Harbor, se debe ejecutar el siguiente comando:
+Para crear un namespace para nginx-ingress y desplegarlo, se debe ejecutar el siguiente comando:
 
 ```bash
-kubectl create namespace harbor
+kubectl create ns nginx-ingress
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install nginx-ingress ingress-nginx/ingress-nginx -n nginx-ingress
+kubectl get services -n nginx-ingress
 ```
+
 
 ## Paso 3. Configurar Harbor
 
 ### 3.1. Instalar Harbor
+
+Crear un namespace para Harbor, se debe ejecutar el siguiente comando:
+
+```bash
+kubectl create namespace harbor
+```
 
 Para instalar Harbor, se debe ejecutar el siguiente comando:
 
