@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d-api-rest-grpc
+  namespace: project
+  labels:
+    app: d-api-rest-grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: d-api-rest-grpc
+  template:
+    metadata:
+      labels:
+        app: d-api-rest-grpc
+    spec:
+      containers:
+      - name: api-rest
+        image: <TU_IMAGEN_API_REST>
+        ports:
+        - containerPort: 3000
+      - name: grpc-server
+        image: <TU_IMAGEN_GRPC_SERVER>
+        ports:
+        - containerPort: 3001
+      - name: rust-processor
+        image: <TU_IMAGEN_RUST>
+        ports:
+        - containerPort: 8081
